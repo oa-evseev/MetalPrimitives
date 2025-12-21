@@ -19,9 +19,7 @@ class CmdRectTube:
         doc = App.ActiveDocument
         obj = doc.addObject("Part::FeaturePython", "RectTube")
         RectTube(obj)
-
-        if Gui.Up:
-            RectTubeViewProvider(obj.ViewObject)
+        RectTubeViewProvider(obj.ViewObject)
 
         doc.recompute()
 

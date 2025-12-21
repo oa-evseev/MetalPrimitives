@@ -2,6 +2,7 @@ import FreeCAD as App
 import FreeCADGui as Gui
 
 from metal_primitives.features.rect_tube import RectTube, RectTubeViewProvider
+from metal_primitives.gui.resources import icon_path
 
 
 class CmdRectTube:
@@ -9,7 +10,7 @@ class CmdRectTube:
         return {
             "MenuText": "RectTube",
             "ToolTip": "Insert a rectangular/square hollow section (FeaturePython).",
-            "Pixmap": "",  # you can put an absolute path or a Qt resource later
+            "Pixmap": icon_path("rect_tube.svg"),
         }
 
     def IsActive(self):

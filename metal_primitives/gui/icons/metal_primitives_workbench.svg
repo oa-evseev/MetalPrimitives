@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<title>Metal Primitives Workbench</title>
+<path fill="#404041" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+M25.417,27.713c-0.388,0.245-0.646,0.678-0.646,1.171l23.359-14.837c0-0.422,0.221-0.793,0.553-1.004L25.417,27.713z"/>
+
+<path fill="#6D6E70" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+M41.706,31.625c-0.195,0.143-0.437,0.227-0.697,0.227L16.463,49.656c0.304,0,0.585-0.1,0.813-0.266L41.706,31.625z"/>
+
+<path fill="#6D6E70" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+M30.85,32.054c0.189-0.128,0.418-0.202,0.664-0.202L5.385,49.656c-0.289,0-0.557,0.088-0.779,0.238L30.85,32.054z"/>
+
+<polygon fill="#A6A8AB" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+5.385,49.656 31.514,31.852 41.009,31.852 16.463,49.656 	"/>
+
+<polygon fill="#58595B" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+48.131,14.047 24.771,28.884 24.771,48.271 48.131,30.665 	"/>
+
+<path fill="#404041" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+M59.59,36.902c0.251-0.217,0.41-0.539,0.41-0.896L38.619,54.502c0,0.418-0.185,0.793-0.478,1.047L59.59,36.902z"/>
+
+<path fill="#929497" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+M5.385,21.96c-0.233,0-0.454,0.058-0.647,0.16L30.959,8.25c0.165-0.088,0.354-0.138,0.555-0.138L5.385,21.96z"/>
+
+<path fill="#58595B" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+M38.619,26.115c0,0.477-0.24,0.896-0.606,1.146l21.467-14.604C59.794,12.442,60,12.082,60,11.673L38.619,26.115z"/>
+
+<path fill="#7A7C7F" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+M24.771,48.271c0,0.764,0.62,1.385,1.385,1.385l23.161-17.804c-0.655,0-1.187-0.532-1.187-1.188L24.771,48.271z"/>
+
+<path fill="#7A7C7F" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+M38.619,51.041c0-0.766-0.62-1.385-1.385-1.385l21.579-17.804c0.655,0,1.187,0.531,1.187,1.187L38.619,51.041z"/>
+
+<path fill="#BBBDBF" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+M58.813,8.113C59.469,8.113,60,8.644,60,9.299L38.619,23.345c0-0.765-0.62-1.385-1.385-1.385L58.813,8.113z"/>
+
+<polygon fill="#808184" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+38.619,23.345 60,9.299 60,11.673 38.619,26.115 	"/>
+
+<polygon fill="#9A9C9F" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+49.317,31.852 26.156,49.656 37.234,49.656 58.813,31.852 	"/>
+
+<polygon fill="#58595B" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+38.619,51.041 60,33.039 60,36.006 38.619,54.502 	"/>
+
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+5.385,21.96 31.514,8.113 58.813,8.113 37.234,21.96 	"/>
+
+<path fill="#FFFFFF" stroke="#000000" stroke-width="1.1078" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+M26.156,49.656c-0.765,0-1.385-0.621-1.385-1.385V28.884c0-0.765,0.62-1.385,1.385-1.385h11.078c0.765,0,1.385-0.62,1.385-1.385
+v-2.77c0-0.765-0.62-1.385-1.385-1.385H5.385C4.62,21.96,4,22.581,4,23.345v2.77C4,26.879,4.62,27.5,5.385,27.5h11.078
+c0.765,0,1.385,0.62,1.385,1.385v19.387c0,0.764-0.62,1.385-1.385,1.385H5.385C4.62,49.656,4,50.275,4,51.041v3.461
+c0,0.766,0.62,1.385,1.385,1.385h31.85c0.765,0,1.385-0.619,1.385-1.385v-3.461c0-0.766-0.62-1.385-1.385-1.385H26.156z"/>
+</svg>

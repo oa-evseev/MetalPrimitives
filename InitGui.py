@@ -1,18 +1,17 @@
 import FreeCADGui as Gui
 
-from metal_primitives.gui.commands import register_commands
-from metal_primitives.gui.resources import WORKBENCH_NAME
-
 
 class MetalPrimitivesWorkbench(Gui.Workbench):
-    MenuText = WORKBENCH_NAME
+    MenuText = "Metal Primitives"
     ToolTip = "Metal construction primitives (FeaturePython)."
     Icon = ""
 
     def Initialize(self):
+        from metal_primitives.gui.commands import register_commands
+
         register_commands()
-        self.appendToolbar(WORKBENCH_NAME, ["MetalPrimitives_RectTube"])
-        self.appendMenu(WORKBENCH_NAME, ["MetalPrimitives_RectTube"])
+        self.appendToolbar(self.MenuText, ["MetalPrimitives_RectTube"])
+        self.appendMenu(self.MenuText, ["MetalPrimitives_RectTube"])
 
     def GetClassName(self):
         return "Gui::PythonWorkbench"

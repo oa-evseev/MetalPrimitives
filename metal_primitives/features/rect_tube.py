@@ -73,6 +73,7 @@ class RectTube(FeatureBase):
             inner_wx = Wx - 2.0 * T
             inner_wy = Wy - 2.0 * T
             inner = rounded_rectangle_wire(inner_wx, inner_wy, R_in)
+            inner.reverse()
             face = Part.Face([outer, inner])
 
         prism = face.extrude(App.Vector(0, 0, H))

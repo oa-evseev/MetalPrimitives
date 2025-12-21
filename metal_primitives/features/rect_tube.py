@@ -17,8 +17,8 @@ class RectTube(FeatureBase):
     @staticmethod
     def _add_properties(obj):
         obj.addProperty("App::PropertyLength", "Height", "RectTube", "Extrusion length along +Z.").Height = "100 mm"
-        obj.addProperty("App::PropertyLength", "Width", "RectTube", "Outer size along X.").Width = "40 mm"
-        obj.addProperty("App::PropertyLength", "Depth", "RectTube", "Outer size along Y.").Depth = "20 mm"
+        obj.addProperty("App::PropertyLength", "WidthX", "RectTube", "Outer size along X.").WidthX = "40 mm"
+        obj.addProperty("App::PropertyLength", "WidthY", "RectTube", "Outer size along Y.").WidthY = "20 mm"
         obj.addProperty("App::PropertyLength", "Wall", "RectTube", "Wall thickness (ignored if Solid=True).").Wall = "2 mm"
 
         obj.addProperty("App::PropertyLength", "OuterRadius", "RectTube", "Outer corner radius (0 for sharp).").OuterRadius = "0 mm"
@@ -31,48 +31,48 @@ class RectTube(FeatureBase):
 
     @staticmethod
     def _validate(obj):
-        H = qlength(obj.Height)
-        W = qlength(obj.Width)
-        D = qlength(obj.Depth)
-        T = qlength(obj.Wall)
+        H  = qlength(obj.Height)
+        Wx = qlength(obj.WidthX)
+        Wy = qlength(obj.WidthY)
+        T  = qlength(obj.Wall)
         R_out = qlength(obj.OuterRadius)
         R_in = qlength(obj.InnerRadius)
         solid = bool(obj.Solid)
 
-        require(H > 0, "Height must be > 0")
-        require(W > 0, "Width must be > 0")
-        require(D > 0, "Depth must be > 0")
+        require(H  > 0, "Height must be > 0")
+        require(Wx > 0, "WidthX must be > 0")
+        require(Wy > 0, "WidthY must be > 0")
 
         require(R_out >= 0, "OuterRadius must be >= 0")
-        require(R_out <= min(W, D) / 2.0, "OuterRadius must be <= min(Width, Depth)/2")
+        require(R_out <= min(Wx, Wy) / 2.0, "OuterRadius must be <= min(WidthX, WidthY)/2")
 
         if solid:
             require(R_in >= 0, "InnerRadius must be >= 0 (ignored when Solid=True)")
-            return H, W, D, T, R_out, R_in, solid
+            return H, Wx, Wy, T, R_out, R_in, solid
 
         require(T > 0, "Wall must be > 0 when Solid=False")
-        require(T < min(W, D) / 2.0, "Wall must be < min(Width, Depth)/2 when Solid=False")
+        require(T < min(Wx, Wy) / 2.0, "Wall must be < min(WidthX, WidthY)/2 when Solid=False")
 
-        inner_w = W - 2.0 * T
-        inner_d = D - 2.0 * T
-        require(inner_w > 0 and inner_d > 0, "Inner dimensions must be > 0 (check Wall vs Width/Depth)")
+        inner_wx = Wx - 2.0 * T
+        inner_wy = Wy - 2.0 * T
+        require(inner_wx > 0 and inner_wy > 0, "Inner dimensions must be > 0 (check Wall vs WidthX/WidthY)")
 
         require(R_in >= 0, "InnerRadius must be >= 0")
-        require(R_in <= min(inner_w, inner_d) / 2.0, "InnerRadius must be <= min(Width-2T, Depth-2T)/2")
+        require(R_in <= min(inner_wx, inner_wy) / 2.0, "InnerRadius must be <= min(WidthX-2T, WidthY-2T)/2")
 
-        return H, W, D, T, R_out, R_in, solid
+        return H, Wx, Wy, T, R_out, R_in, solid
 
     def execute(self, obj):
-        H, W, D, T, R_out, R_in, solid = self._validate(obj)
+        H, Wx, Wy, T, R_out, R_in, solid = self._validate(obj)
 
-        outer = rounded_rectangle_wire(W, D, R_out)
+        outer = rounded_rectangle_wire(Wx, Wy, R_out)
 
         if solid:
             face = Part.Face(outer)
         else:
-            inner_w = W - 2.0 * T
-            inner_d = D - 2.0 * T
-            inner = rounded_rectangle_wire(inner_w, inner_d, R_in)
+            inner_wx = Wx - 2.0 * T
+            inner_wy = Wy - 2.0 * T
+            inner = rounded_rectangle_wire(inner_wx, inner_wy, R_in)
             face = Part.Face([outer, inner])
 
         prism = face.extrude(App.Vector(0, 0, H))

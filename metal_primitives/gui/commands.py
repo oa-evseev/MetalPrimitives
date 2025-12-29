@@ -2,6 +2,7 @@ import FreeCAD as App
 import FreeCADGui as Gui
 
 from metal_primitives.features.rect_tube import RectTube, RectTubeViewProvider
+from metal_primitives.features.plate_triangle import PlateTriangle, PlateTriangleViewProvider
 from metal_primitives.gui.resources import icon_path
 
 
@@ -24,6 +25,25 @@ class CmdRectTube:
 
         doc.recompute()
 
+class CmdPlateTriangle:
+    def GetResources(self):
+        return {
+            "MenuText": "PlateTriangle",
+            "ToolTip": "Insert a triangular plate (gusset) defined by two sides and the included angle (FeaturePython).",
+            "Pixmap": icon_path("plate_triangle.svg"),
+        }
+
+    def IsActive(self):
+        return App.ActiveDocument is not None
+
+    def Activated(self):
+        doc = App.ActiveDocument
+        obj = doc.addObject("Part::FeaturePython", "PlateTriangle")
+        PlateTriangle(obj)
+        PlateTriangleViewProvider(obj.ViewObject)
+
+        doc.recompute()
 
 def register_commands():
     Gui.addCommand("MetalPrimitives_RectTube", CmdRectTube())
+    Gui.addCommand("MetalPrimitives_PlateTriangle", CmdPlateTriangle())

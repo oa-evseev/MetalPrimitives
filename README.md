@@ -82,6 +82,7 @@ Invalid parameters raise an exception on recompute.
 
 ### Plates and sheets
 - [ ] Plate (rectangular)
+- [x] Plate Triangle
 - [ ] Perforated plate
 - [ ] Expanded metal (optional)
 

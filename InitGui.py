@@ -18,8 +18,22 @@ class MetalPrimitivesWorkbench(Gui.Workbench):
         #self.Icon = #icon_path("metal_primitives_workbench.svg")
 
         register_commands()
-        self.appendToolbar(self.MenuText, ["MetalPrimitives_RectTube"])
-        self.appendMenu(self.MenuText, ["MetalPrimitives_RectTube"])
+        self.appendToolbar(
+            self.MenuText,
+            [
+                "MetalPrimitives_RectTube",
+                "MetalPrimitives_PlateTriangle",
+            ],
+        )
+
+        self.appendMenu(
+            self.MenuText,
+            [
+                "MetalPrimitives_RectTube",
+                "MetalPrimitives_PlateTriangle",
+            ],
+        )
+
 
     def GetClassName(self):
         return "Gui::PythonWorkbench"

@@ -23,7 +23,7 @@ class MetalPrimitivesWorkbench(Gui.Workbench):
             [
                 "MetalPrimitives_RectTube",
                 "MetalPrimitives_PlateTriangle",
-                "MetalPrimitives_Plate",
+                "MetalPrimitives_PlateRectangle",
             ],
         )
 
@@ -32,7 +32,7 @@ class MetalPrimitivesWorkbench(Gui.Workbench):
             [
                 "MetalPrimitives_RectTube",
                 "MetalPrimitives_PlateTriangle",
-                "MetalPrimitives_Plate",
+                "MetalPrimitives_PlateRectangle",
             ],
         )
 

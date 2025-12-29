@@ -3,7 +3,7 @@ import FreeCADGui as Gui
 
 from metal_primitives.features.rect_tube import RectTube, RectTubeViewProvider
 from metal_primitives.features.plate_triangle import PlateTriangle, PlateTriangleViewProvider
-from metal_primitives.features.plate import Plate, PlateViewProvider
+from metal_primitives.features.plate_rectangle import PlateRectangle, PlateRectangleViewProvider
 from metal_primitives.gui.resources import icon_path
 
 
@@ -48,7 +48,7 @@ class CmdPlateTriangle:
 class CmdPlate:
     def GetResources(self):
         return {
-            "MenuText": "Plate",
+            "MenuText": "PlateRectangle",
             "ToolTip": "Insert a rectangular plate (FeaturePython).",
             "Pixmap": icon_path("plate.svg"),
         }
@@ -58,14 +58,14 @@ class CmdPlate:
 
     def Activated(self):
         doc = App.ActiveDocument
-        obj = doc.addObject("Part::FeaturePython", "Plate")
-        Plate(obj)
-        PlateViewProvider(obj.ViewObject)
+        obj = doc.addObject("Part::FeaturePython", "PlateRectangle")
+        PlateRectangle(obj)
+        PlateRectangleViewProvider(obj.ViewObject)
 
         doc.recompute()
 
 def register_commands():
     Gui.addCommand("MetalPrimitives_RectTube", CmdRectTube())
     Gui.addCommand("MetalPrimitives_PlateTriangle", CmdPlateTriangle())
-    Gui.addCommand("MetalPrimitives_Plate", CmdPlate())
+    Gui.addCommand("MetalPrimitives_PlateRectangle", CmdPlate())
 
